@@ -17,10 +17,15 @@ Business dashboards API (TODO) - This is a cleanup and aggregation pipeline that
 ## Project Structure
 
 ingestion.py: cloud function script that pulls data from ERPNext server and stores in database. Will be run on a daily basis.
+
 main.py: FastAPI app initialization and root endpoints
+
 routers/: API endpoint definitions
+
 crud/: Data access logic
+
 models/: Pydantic models for data validation and serialization (in progress)
+
 core/: Database connections
 
 ## Storage Structure
