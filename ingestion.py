@@ -2,12 +2,12 @@
 # This will run daily at 3am or when needed by CSA IT admin.
 
 import requests
-import credentials
+import parameters
 import pymongo
 from ERPs import ERP
 
 # Connect to MongoDB
-uri = credentials.mongodb_uri
+uri = parameters.MONGODB_URL
 client = pymongo.MongoClient(uri)
 db = client["csa-datastore"]
 
@@ -15,7 +15,7 @@ db = client["csa-datastore"]
 for erp_instance in ERP:
 
     # Login
-    login_url = f"https://{erp_instance.value}/api/method/login?usr={credentials.username}&pwd={credentials.password}"
+    login_url = f"https://{erp_instance.value}/api/method/login?usr={parameters.USER_NAME}&pwd={parameters.ERP_PASSWORD}"
     session = requests.Session()
     response = session.post(login_url)
     if response.status_code != 200:
