@@ -5,6 +5,8 @@ from fastapi.responses import JSONResponse
 import json
 from bson import json_util
 
+from parameters import MONGODB_URL
+
 app = FastAPI()
 
 @app.get("/")
@@ -12,9 +14,8 @@ def read_root():
     return {"Hello": "World"}
 
 # Connect to mongodb
-uri = "mongodb+srv://abhigna:tKL7wofNpfP6FExb@cluster0.ned0f.mongodb.net/"
 # Create a connection to MongoDB
-client = pymongo.MongoClient(uri)
+client = pymongo.MongoClient(MONGODB_URL)
 db = client['fpohub']
 collection = db['companies']
 

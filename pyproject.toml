@@ -6,7 +6,7 @@ authors = [
     {name = "Abhigna Revuru",email = "21285441+abhignarevuru@users.noreply.github.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.9"
 dependencies = [
     "fastapi (>=0.115.8,<0.116.0)",
     "uvicorn (>=0.34.0,<0.35.0)",
@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "csa_warehouse_backend", from = "src"}]
+package-mode = false
 
 
 [build-system]

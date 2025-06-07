@@ -26,8 +26,3 @@ class DocumentBase(BaseModel):
 
 class DocumentInDB(DocumentBase):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
-
-    # TODO
-    # class Config:
-    #     # Serializing
-    #     json_encoders = {ObjectId: str}
